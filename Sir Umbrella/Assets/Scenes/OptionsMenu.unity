@@ -163,7 +163,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 899090146}
-        m_MethodName: pauseBGMusic
+        m_MethodName: toggleBGMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 4b7df716d0e5b4aca995031824a63b95, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5c1e5ddd08cf42e79948422816e3729, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -361,6 +361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0713e7523174b1e9d5f1070bfa1649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicButton: {fileID: 444995219}
+  green: {fileID: 21300000, guid: c5c1e5ddd08cf42e79948422816e3729, type: 3}
+  red: {fileID: 21300000, guid: 4b7df716d0e5b4aca995031824a63b95, type: 3}
 --- !u!4 &899090147
 Transform:
   m_ObjectHideFlags: 0

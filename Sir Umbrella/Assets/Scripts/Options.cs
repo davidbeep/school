@@ -1,13 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI ;
 
 public class Options : MonoBehaviour 
 {
-	GameObject musicButton ;
+
+	//GameObject musicButton ;
+	public Button musicButton ;
+	public Sprite green, red ;
+
 	// Use this for initialization
 	void Start () 
 	{
-		musicButton = GameObject.FindGameObjectWithTag ("musicButton");
+
 	}
 	
 	// Update is called once per frame
@@ -16,17 +21,20 @@ public class Options : MonoBehaviour
 	
 	}
 
-	public void pauseBGMusic()
+	public void toggleBGMusic()
 	{
 		if ( MusicManager.instance.IsPlaying() ) 
 		{
 			MusicManager.instance.Pause ();
 			// change button image color now to red (should be green to start)
+			musicButton.image.sprite = red ;
+
 		}
 		else 
 		{
 			MusicManager.instance.UnPause() ;
-			// change button image color now to green 
+			// change button image color now to green
+			musicButton.image.sprite = green ;
 		}
 
 	}
