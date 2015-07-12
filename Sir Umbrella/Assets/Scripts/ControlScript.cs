@@ -23,8 +23,6 @@ public class ControlScript : MonoBehaviour {
 	
 		rigidBody = GetComponent<Rigidbody2D> ();
 		windCurrent = LayerMask.GetMask ("Wind");
-
-
 	}
 	
 	// Update is called once per frame

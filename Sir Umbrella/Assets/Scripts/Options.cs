@@ -7,12 +7,20 @@ public class Options : MonoBehaviour
 
 	//GameObject musicButton ;
 	public Button musicButton ;
+	public Button sfxButton ;
 	public Sprite green, red ;
 
 	// Use this for initialization
 	void Start () 
 	{
-
+		if (MusicManager.instance.IsPlaying() == false) 
+		{
+			musicButton.image.sprite = red ;
+		}
+		if (MusicManager.instance.SoundEffectsOn() == false) 
+		{
+			sfxButton.image.sprite = red ;
+		}
 	}
 	
 	// Update is called once per frame
@@ -38,8 +46,17 @@ public class Options : MonoBehaviour
 		}
 
 	}
-	public void resumeBGMusic()
+	public void toggleSoundEffects()
 	{
-
+		if (MusicManager.instance.SoundEffectsOn ()) 
+		{
+			MusicManager.instance.DisableSoundEffects() ;
+			sfxButton.image.sprite = red ;
+		}
+		else 
+		{
+			MusicManager.instance.EnableSoundEffects() ;
+			sfxButton.image.sprite = green ;
+		}
 	}
 }
