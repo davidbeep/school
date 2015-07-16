@@ -7,6 +7,7 @@ public class ControlScript : MonoBehaviour {
 	public bool hasWind;
 	public float windForce;
 	private Rigidbody2D rigidBody;
+	public float horizontalSpeed;
 
 
 	void OnTriggerStay2D (Collider2D c){
@@ -32,7 +33,9 @@ public class ControlScript : MonoBehaviour {
 
 	void FixedUpdate(){
 
-		rigidBody.AddForce(new Vector2 (20,0));// constant horizontal movement
+		// might change this to start and remove linear drag to have a constant force from the start
+		// but having 0 linear drag might feel weird so it might remain as is.
+		rigidBody.AddForce(new Vector2 (horizontalSpeed,0));// constant horizontal movement
 
 		/*if (Input.GetTouch (0).phase == TouchPhase.Began && hasWind) {
 
