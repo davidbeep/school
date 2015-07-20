@@ -8,6 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 495070}
+  - 50: {fileID: 5032052}
+  - 60: {fileID: 6064884}
+  - 114: {fileID: 11426670}
+  - 114: {fileID: 11492818}
   m_Layer: 0
   m_Name: orange_balloon
   m_TagString: Untagged
@@ -39,8 +43,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.8928349, y: -2.69242167, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -30.5269432, y: -1.93371654, z: 0}
+  m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children:
   - {fileID: 496478}
   m_Father: {fileID: 0}
@@ -57,6 +61,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 495070}
   m_RootOrder: 0
+--- !u!50 &5032052
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100404}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &6064884
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100404}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -1.77762985, y: -.216273069}
+      - {x: -1.41132164, y: -.369289637}
+      - {x: -1.47052383, y: -.972746253}
+      - {x: -2.01456833, y: -1.01952577}
+      - {x: -2.19072151, y: -.579798102}
 --- !u!95 &9575246
 Animator:
   serializedVersion: 3
@@ -74,6 +112,32 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11426670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c2c6e5114ef444a4fa2ab432ddae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHorizontalSpeed: -5
+  minVerticalSpeed: -1
+  maxHorizontalSpeed: 5
+  maxVerticalSpeed: 5
+--- !u!114 &11492818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a0a455d81fa0247833106657f85791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21221190
 SpriteRenderer:
   m_ObjectHideFlags: 1

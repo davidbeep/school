@@ -56,6 +56,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439694}
+  - 50: {fileID: 5045272}
+  - 60: {fileID: 6067222}
+  - 114: {fileID: 11406538}
+  - 114: {fileID: 11408902}
   m_Layer: 0
   m_Name: buzzard
   m_TagString: Untagged
@@ -130,8 +134,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .853567243, y: -1.25664067, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.96000004, y: 1.46000004, z: 0}
+  m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children:
   - {fileID: 427722}
   m_Father: {fileID: 0}
@@ -172,6 +176,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 427722}
   m_RootOrder: 1
+--- !u!50 &5045272
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136044}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &6067222
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136044}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -.69198513, y: -.19433403}
+      - {x: -.741037369, y: -.196141481}
+      - {x: -.792042732, y: -.20397377}
+      - {x: -1.18461227, y: -.223058701}
+      - {x: -1.24115753, y: -.0145602226}
+      - {x: -1.34013748, y: .0505871773}
+      - {x: -1.60592556, y: -.070045948}
+      - {x: -1.99959755, y: -.168899298}
+      - {x: -2.08870983, y: -.270643473}
+      - {x: -2.08592033, y: -.367164612}
+      - {x: -1.86043167, y: -.302875757}
+      - {x: -1.61878872, y: -.291149139}
+      - {x: -1.51562977, y: -.353125811}
+      - {x: -1.43231297, y: -.328836203}
+      - {x: -1.31964111, y: -.350188017}
+      - {x: -1.19316959, y: -.256025076}
+      - {x: -.90884304, y: -.255375862}
+      - {x: -.703100204, y: -.265453577}
+      - {x: -.666358948, y: -.265809059}
+      - {x: -.628270149, y: -.320431948}
+      - {x: -.456961632, y: -.286750793}
+      - {x: -.0809984207, y: -.385639668}
+      - {x: -.229206085, y: -.458997011}
+      - {x: -.220078468, y: -.595905066}
+      - {x: -.130629539, y: -.624363422}
+      - {x: .0734796524, y: -.55162096}
+      - {x: .261802673, y: -.590709209}
+      - {x: 1.03031731, y: -.82963562}
+      - {x: 1.20297718, y: -.817492962}
+      - {x: 1.29104996, y: -.695809364}
+      - {x: 1.6965971, y: -.192396641}
+      - {x: 1.72390366, y: -.0928766727}
+      - {x: 1.36900806, y: -.0176362991}
+      - {x: .489400864, y: -.0880413055}
+      - {x: .289340973, y: -.0158839226}
+      - {x: -.0347099304, y: -.0129687786}
+      - {x: -.578034401, y: -.146549225}
 --- !u!95 &9525664
 Animator:
   serializedVersion: 3
@@ -189,6 +259,29 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11406538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a0a455d81fa0247833106657f85791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11408902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b0fcde92fdbdbc47941cf3b66940e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalSpeed: -40
 --- !u!212 &21213592
 SpriteRenderer:
   m_ObjectHideFlags: 1
