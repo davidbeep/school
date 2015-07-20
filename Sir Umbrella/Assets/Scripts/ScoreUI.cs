@@ -14,17 +14,17 @@ public class ScoreUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		//if (running) {
+	
 			
 			score.text = count.ToString ();
 			count += 10;
-		//}
+
 	}
 
-	public void addScore(int amount ){
+	public static void addScore(int amount ){
 		count += amount;
 	}
-	public void resetScore(){
+	public static void resetScore(){
 
 		count = 0;
 	}

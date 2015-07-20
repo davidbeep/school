@@ -11,6 +11,7 @@ public class EnemyHard : MonoBehaviour {
 	private float randomY,oldY;
 	private Rigidbody2D rigidBody;
 	private float timer; // how long it takes the enemy to switch directions
+	public float sleepTime; // how long it takes to start moving
 
 	
 	// Use this for initialization
@@ -21,30 +22,33 @@ public class EnemyHard : MonoBehaviour {
 	}
 	
 	void Update () {
+
+		sleepTime -= Time.deltaTime;
+		if (sleepTime <= 0) {
+
+			timer -= Time.deltaTime;
+
+			if (timer <= 0) {
+
 		
-		timer -= Time.deltaTime;
 
-		if (timer <= 0) {
+				// randomize x and y forces
+				oldX = randomX;
+				oldY = randomY;
+				randomX = Random.Range (minHorizontalSpeed, maxHorizontalSpeed);
+				randomY = Random.Range (minVerticalSpeed, maxVerticalSpeed);
+				if (Mathf.Abs (oldX + randomX) > (maxHorizontalSpeed / 2) || oldX + randomX > Mathf.Abs (minHorizontalSpeed / 2)) {
+					randomX = -randomX;
+				}
+				if (Mathf.Abs (oldY + randomY) > (maxVerticalSpeed / 2) || oldY + randomY > Mathf.Abs (minVerticalSpeed / 2)) {
+					randomY = -randomY;
+				}
 
-		
+				rigidBody.AddForce (new Vector2 (randomX, randomY)); // apply the force
 
-			// randomize x and y forces
-			oldX = randomX;
-			oldY = randomY;
-			randomX = Random.Range(minHorizontalSpeed,maxHorizontalSpeed);
-			randomY = Random.Range(minVerticalSpeed,maxVerticalSpeed);
-			if (Mathf.Abs(oldX + randomX) > (maxHorizontalSpeed/2) || oldX + randomX > Mathf.Abs(minHorizontalSpeed/2)){
-				randomX = -randomX;
-			}
-			if (Mathf.Abs(oldY + randomY) > (maxVerticalSpeed/2) || oldY + randomY > Mathf.Abs(minVerticalSpeed/2)){
-				randomY = -randomY;
-			}
-
-			rigidBody.AddForce (new Vector2 (randomX, randomY)); // apply the force
-
-			timer = 2;
-		} 
-		
+				timer = 2;
+			} 
+		}
 	}
 }
 

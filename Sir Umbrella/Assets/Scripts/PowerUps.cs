@@ -12,8 +12,6 @@ public class PowerUps : MonoBehaviour {
 	public float speedPowerUpMultiplier;
 	public int scorePowerUpAmount;
 
-	private ScoreUI scoreCount = new ScoreUI ();
-
 	void Start(){
 
 		cs = (ControlScript)FindObjectOfType (typeof(ControlScript));
@@ -23,7 +21,7 @@ public class PowerUps : MonoBehaviour {
 
 		if (c.gameObject.name == "Character"){
 
-			scoreCount.addScore(5000);
+			ScoreUI.addScore(5000);
 
 		if (windPowerUp) {
 			cs.windForce = cs.windForce * windPowerUpMultiplier;
@@ -33,12 +31,12 @@ public class PowerUps : MonoBehaviour {
 		}
 		if (speedPowerUp){
 			cs.horizontalSpeed = cs.horizontalSpeed * speedPowerUpMultiplier;
-			
+				ControlScript.hasWind = true;// fixes an issue with powerups disabling this, shouldnt need it once we implement wind
 			Destroy(gameObject);
 			
 		}
 		if(scorePowerUp){
-			scoreCount.addScore(scorePowerUpAmount);
+				ScoreUI.addScore(scorePowerUpAmount);
 
 		    Destroy(gameObject);
 		}

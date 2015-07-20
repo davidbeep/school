@@ -4,7 +4,7 @@ using System.Collections;
 public class ControlScript : MonoBehaviour {
 
 	public LayerMask windCurrent;
-	public bool hasWind;
+	public static bool hasWind = true; // remove once wind is implemented
 	public float windForce;
 	private Rigidbody2D rigidBody;
 	public float horizontalSpeed;
@@ -34,7 +34,7 @@ public class ControlScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		hasWind = true; // remove once wind is implemented
 		if (Time.timeScale == 0.0f && Input.GetMouseButton (0)) {
 
 			resumeDelay = Time.deltaTime; // to add a small delay on resume in order to make it feel more fluid

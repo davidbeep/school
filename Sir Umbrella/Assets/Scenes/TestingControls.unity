@@ -184,9 +184,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windPowerUp: 1
   gunPowerUp: 0
+  scorePowerUp: 0
   speedPowerUp: 0
   windPowerUpMultiplier: 2
   speedPowerUpMultiplier: 0
+  scorePowerUpAmount: 0
 --- !u!60 &268059933
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -499,7 +501,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 543250882}
   m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
-  m_LocalPosition: {x: 33.7999992, y: 10.3999996, z: 90}
+  m_LocalPosition: {x: 67.8000031, y: 7.19999981, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1161,9 +1163,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windPowerUp: 0
   gunPowerUp: 0
+  scorePowerUp: 0
   speedPowerUp: 1
   windPowerUpMultiplier: 0
   speedPowerUpMultiplier: 3
+  scorePowerUpAmount: 0
 --- !u!60 &1681367100
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1218,7 +1222,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1681367098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.3100004, y: 16.5799999, z: 90}
+  m_LocalPosition: {x: -19.2099991, y: -6.30000019, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1258,6 +1262,7 @@ MonoBehaviour:
   minVerticalSpeed: -1000
   maxHorizontalSpeed: 1300
   maxVerticalSpeed: 1000
+  sleepTime: 0
 --- !u!114 &1746176617
 MonoBehaviour:
   m_ObjectHideFlags: 0
