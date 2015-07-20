@@ -10,6 +10,8 @@ public class PowerUps : MonoBehaviour {
 	public float windPowerUpMultiplier;
 	public float speedPowerUpMultiplier;
 
+	private ScoreUI scoreCount = new ScoreUI ();
+
 	void Start(){
 
 		cs = (ControlScript)FindObjectOfType (typeof(ControlScript));
@@ -18,6 +20,8 @@ public class PowerUps : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D c){
 
 		if (c.gameObject.name == "Character"){
+
+			scoreCount.addScore(5000);
 
 		if (windPowerUp) {
 			cs.windForce = cs.windForce * windPowerUpMultiplier;
