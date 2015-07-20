@@ -12,7 +12,7 @@ public class charControl : MonoBehaviour {
 		rigidBody = GetComponent<Rigidbody2D> ();
 		windVertical = 16f;
 		windHorizontal = 0.8f;
-		constantHorizontal = 0.5f;
+		constantHorizontal = 0.01f;
 	}
 	
 	// Update is called once per frame
@@ -34,6 +34,7 @@ public class charControl : MonoBehaviour {
 		if (Input.GetMouseButton (0)) {
 			
 			rigidBody.AddForce (new Vector2 (windHorizontal, windVertical));
+			if (windHorizontal > 0.1f) windHorizontal -= 0.1f ;
 			
 		} 
 		else
