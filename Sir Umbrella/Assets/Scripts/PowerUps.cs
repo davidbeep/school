@@ -6,9 +6,11 @@ public class PowerUps : MonoBehaviour {
 	private ControlScript cs;
 	public bool windPowerUp; // affects wind force from opening umbrella inside a wind current
 	public bool gunPowerUp;
-	public bool speedPowerUp; // affects horizontal wind speed
+	public bool scorePowerUp;
+	public bool speedPowerUp;// affects horizontal wind speed
 	public float windPowerUpMultiplier;
 	public float speedPowerUpMultiplier;
+	public int scorePowerUpAmount;
 
 	private ScoreUI scoreCount = new ScoreUI ();
 
@@ -35,7 +37,12 @@ public class PowerUps : MonoBehaviour {
 			Destroy(gameObject);
 			
 		}
+		if(scorePowerUp){
+			scoreCount.addScore(scorePowerUpAmount);
 
-	}
+		    Destroy(gameObject);
+		}
+
+		}
 	}
 }

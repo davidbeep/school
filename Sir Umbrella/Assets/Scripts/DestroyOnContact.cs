@@ -7,8 +7,7 @@ public class DestroyOnContact : MonoBehaviour {
 
 		if (c.gameObject.name == "Character") {
 			Destroy (c.gameObject);
-
-			// switch to game over screen here
+			Application.LoadLevel("LevelSelectC1"); // should be game over screen when we get art for it
 		}
 	}
 }

@@ -24,5 +24,9 @@ public class ScoreUI : MonoBehaviour {
 	public void addScore(int amount ){
 		count += amount;
 	}
+	public void resetScore(){
+
+		count = 0;
+	}
 
 }
