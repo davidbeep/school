@@ -6,10 +6,12 @@ public class ScoreUI : MonoBehaviour {
 
 	public Text score;
 	private static int count;
+	private static bool win ;
 
 	// Use this for initialization
 	void Awake () {
 		score = GetComponent<Text> ();
+		win = false;
 	}
 	
 	// Update is called once per frame
@@ -27,6 +29,18 @@ public class ScoreUI : MonoBehaviour {
 	public static void resetScore(){
 
 		count = 0;
+	}
+	public static int getScore()
+	{
+		return count ;
+	}
+	public static void setWinBool(bool x)
+	{
+		win = x;
+	}
+	public static bool getWinBool()
+	{
+		return win;
 	}
 
 }

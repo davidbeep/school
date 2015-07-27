@@ -17,5 +17,11 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelectC2.unity
   - enabled: 1
     path: Assets/Scenes/Level1-1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1-1.unity
+  - enabled: 1
+    path: Assets/Scenes/GameOverMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/Level1-2.unity
+  - enabled: 1
+    path: Assets/Scenes/Level1-3.unity
