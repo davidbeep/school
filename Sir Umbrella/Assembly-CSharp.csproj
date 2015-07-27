@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\EnemyEasy.cs" />
      <Compile Include="Assets\Scripts\EnemyHard.cs" />
      <Compile Include="Assets\Scripts\EnemyMedium.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\MusicManager.cs" />
      <Compile Include="Assets\Scripts\Options.cs" />
      <Compile Include="Assets\Scripts\PowerUps.cs" />
