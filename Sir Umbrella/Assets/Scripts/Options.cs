@@ -59,4 +59,8 @@ public class Options : MonoBehaviour
 			sfxButton.image.sprite = green ;
 		}
 	}
+
+	public static void resetScore(){
+		GameController.controller.resetScores();
+	}
 }

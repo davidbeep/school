@@ -5,7 +5,7 @@ using System.Collections;
 public class ScoreUI : MonoBehaviour {
 
 	public Text score;
-	private static int count;
+	public static int count;
 	private static bool win ;
 
 	// Use this for initialization

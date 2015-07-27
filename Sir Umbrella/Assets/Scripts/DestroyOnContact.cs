@@ -7,7 +7,8 @@ public class DestroyOnContact : MonoBehaviour {
 
 		if (c.gameObject.name == "Character") {
 			Destroy (c.gameObject);
-			Application.LoadLevel("GameOverMenu"); // should be game over screen when we get art for it
+			GameController.levelIndex = Application.loadedLevel - 6; // get index now so it doesn't get overwritten when switching to gameover scene //-6 because level 1-1 starts at number 6 on the build settings, level1-2 is 7 and so on...
+			Application.LoadLevel("GameOverMenu");
 			ScoreUI.setWinBool(false) ;
 			//ScoreUI.resetScore();
 			}
