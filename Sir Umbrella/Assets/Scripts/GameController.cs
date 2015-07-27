@@ -4,21 +4,23 @@ using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
 	public static GameController controller;
-	private bool[] unlockedLevels;
-	private int[] highScores; // saved by level
-	public static int levelIndex;
+	private static bool[] unlockedLevels = new bool[100];
+	private static int[] highScores = new int[100]; // saved by level
+	public static int levelIndex; // current level
 
-	void Awake () {
+	void Awake ()
+	{
 	
 		// singleton pattern
 		if (controller == null) {
 			DontDestroyOnLoad (gameObject);
 			controller = this;
 		} else if (controller != this) {
-			Destroy(gameObject);
+			Destroy (gameObject);
 
 
 		}
@@ -26,44 +28,61 @@ public class GameController : MonoBehaviour {
 		if (!System.IO.File.Exists (Application.persistentDataPath + "/saveData.dat")) {
 			FileStream createFile = File.Create (Application.persistentDataPath + "/saveData.dat");
 			createFile.Close ();
-			GameController.controller.resetScores ();// initializes everything to 0
 			GameController.controller.saveToFile ();
 
 		} else {
-			GameController.controller.loadFromFile();
+			GameController.controller.loadFromFile ();
 		}
-	}
-	
 
-	void OnApplicationQuit() {
+		unlockLevel (0);
+	}
+
+
+	void OnApplicationQuit ()
+	{
 		saveToFile ();
 	}
 
-	public int getCurrentLevelIndex (){
+	// to be used on level completion
+	public void unlockNextLevel ()
+	{
+		unlockLevel (levelIndex + 1);
+	}
+
+	public int getCurrentLevelIndex ()
+	{
 
 		return levelIndex; 
 	}
 
-	public void unlockLevel ( int levelIndex){
-		unlockedLevels [levelIndex] = true;
+	public static void unlockLevel (int index)
+	{
+		unlockedLevels [index] = true;
 	}
 
-	public void setHighScore ( int levelIndex, int highScore){
+	public void setHighScore (int levelIndex, int highScore)
+	{
 		highScores [levelIndex] = highScore;
 	}
 
-	public int getHighScore (int levelIndex){
-		if (GameController.controller.highScores == null) {
+	public int getHighScore (int levelIndex)
+	{
+		if (highScores == null) {
 			GameController.controller.loadFromFile ();
-		} // do the same for levels
-				return GameController.controller.highScores [levelIndex];
+		} 
+		return highScores [levelIndex];
 	}
-	public bool checkIfLevelIsUnlocked (int levelIndex){
-		return GameController.controller.unlockedLevels [levelIndex];
+	public bool checkIfLevelIsUnlocked (int levelIndex)
+	{
+		if (unlockedLevels == null) {
+			GameController.controller.loadFromFile ();
+		} 
+		return unlockedLevels [levelIndex];
 	}
 
 
-	public void saveToFile(){
+	public void saveToFile ()
+	{
 
 		BinaryFormatter formatter = new BinaryFormatter ();
 		FileStream stream = File.Open (Application.persistentDataPath + "/saveData.dat", FileMode.Open);
@@ -75,22 +94,22 @@ public class GameController : MonoBehaviour {
 
 	}
 
-	public void loadFromFile(){
+	public void loadFromFile ()
+	{
 
 		if (File.Exists (Application.persistentDataPath + "/saveData.dat")) {
 
 			BinaryFormatter formatter = new BinaryFormatter ();
 			FileStream stream = File.Open (Application.persistentDataPath + "/saveData.dat", FileMode.Open);
-			PlayerData data = (PlayerData)formatter.Deserialize(stream);
-			stream.Close();
+			PlayerData data = (PlayerData)formatter.Deserialize (stream);
+			stream.Close ();
 
-			if (GameController.controller.highScores == null || GameController.controller.unlockedLevels == null ){
-				GameController.controller.unlockedLevels = new bool[100];
-				GameController.controller.highScores = new int[100];
+			if (highScores == null || unlockedLevels == null) {
+				unlockedLevels = new bool[100];
+				highScores = new int[100];
 				unlockedLevels = data.unlockedLevels;
 				highScores = data.highScores;
-			}
-			else {
+			} else {
 				unlockedLevels = data.unlockedLevels;
 				highScores = data.highScores;
 			}
@@ -98,11 +117,12 @@ public class GameController : MonoBehaviour {
 
 	}
 
-	public void resetScores(){
-		if (GameController.controller.highScores != null) {
-			Array.Clear (GameController.controller.highScores, 0, GameController.controller.highScores.Length);
+	public void resetScores ()
+	{
+		if (highScores != null) {
+			Array.Clear (highScores, 0, highScores.Length);
 		} else {
-			GameController.controller.highScores = new int[100];
+			highScores = new int[100];
 		}
 		// maybe save and load here
 	}
@@ -110,7 +130,8 @@ public class GameController : MonoBehaviour {
 }
 
 [Serializable]
-class PlayerData {
+class PlayerData
+{
 
 	public bool[] unlockedLevels = new bool[100];
 	public int[] highScores = new int[100]; // saved by level
