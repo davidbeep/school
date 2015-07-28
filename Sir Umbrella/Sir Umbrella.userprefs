@@ -1,14 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\gameOver.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\HighScoreBehavior.cs">
     <Files>
-      <File FileName="Assets\Scripts\UINavigation.cs" Line="49" Column="57" />
-      <File FileName="Assets\Scripts\EndOfLevel.cs" Line="11" Column="59" />
-      <File FileName="Assets\Scripts\DestroyOnContact.cs" Line="12" Column="59" />
-      <File FileName="Assets\Scripts\ScoreUI.cs" Line="23" Column="3" />
-      <File FileName="Assets\Scripts\gameOver.cs" Line="32" Column="41" />
-      <File FileName="Assets\Scripts\GameController.cs" Line="80" Column="5" />
-      <File FileName="Assets\Scripts\ControlScript.cs" Line="83" Column="45" />
+      <File FileName="Assets\Scripts\Options.cs" Line="75" Column="3" />
+      <File FileName="Assets\Scripts\UINavigation.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EndOfLevel.cs" Line="17" Column="34" />
+      <File FileName="Assets\Scripts\ScoreUI.cs" Line="2" Column="18" />
+      <File FileName="Assets\Scripts\gameOver.cs" Line="26" Column="78" />
+      <File FileName="Assets\Scripts\GameController.cs" Line="69" Column="8" />
+      <File FileName="Assets\HighScoreBehavior.cs" Line="23" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

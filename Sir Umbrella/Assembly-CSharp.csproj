@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\HighScoreBehavior.cs" />
      <Compile Include="Assets\Scripts\ControlScript.cs" />
      <Compile Include="Assets\Scripts\DestroyOnContact.cs" />
      <Compile Include="Assets\Scripts\EndOfLevel.cs" />
