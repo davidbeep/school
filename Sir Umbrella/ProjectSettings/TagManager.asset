@@ -8,6 +8,8 @@ TagManager:
   - gameOverTitle
   - scoreText
   - highScoreText
+  - nextLevelButton
+  - nextChapterButton
   layers:
   - Default
   - TransparentFX

@@ -34,6 +34,7 @@ public class GameController : MonoBehaviour
 			GameController.controller.loadFromFile ();
 		}
 
+		//unlock the first level
 		unlockLevel (0);
 	}
 
