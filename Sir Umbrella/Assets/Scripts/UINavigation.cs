@@ -1,13 +1,34 @@
 ﻿using UnityEngine;
+using UnityEngine.UI ;
 using System.Collections;
 
 public class UINavigation : MonoBehaviour, UI
 {
 
+	public Button level1;
+	public Button level2;
+	public Button level3;
+	public Sprite active1;
+	public Sprite inactive1;
+	public Sprite active2;
+	public Sprite inactive2;
+	public Sprite active3;
+	public Sprite inactive3;
+
 	// Use this for initialization
 	void Start ()
 	{
-	
+		if (GameController.controller.checkIfLevelIsUnlocked (1)) {
+			level2.image.sprite = active2;
+		} else {
+			level2.image.sprite = inactive2;
+		}
+
+		if (GameController.controller.checkIfLevelIsUnlocked (2)) {
+			level3.image.sprite = active3;
+		} else {
+			level3.image.sprite = inactive3;
+		}
 	}
 
 	public void changeToScene (string key)
