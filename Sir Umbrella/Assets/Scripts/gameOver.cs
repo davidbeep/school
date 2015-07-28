@@ -11,6 +11,7 @@ public class gameOver : MonoBehaviour
 	private Text highScoreText ;
 	private GameObject nextLevelButton;
 	private GameObject nextChapterButton;
+	private GameObject shareButton;
 
 	
 	// Use this for initialization
@@ -25,10 +26,13 @@ public class gameOver : MonoBehaviour
 		nextLevelButton.SetActive (false);
 		nextChapterButton = GameObject.FindGameObjectWithTag ("nextChapterButton");
 		nextChapterButton.SetActive (false);
+		shareButton = GameObject.FindGameObjectWithTag ("shareButton");
+		shareButton.SetActive (false);
 
 
-		if (score >= 8500 && ScoreUI.getWinBool ()) {
+		if (ScoreUI.getWinBool ()) {
 			title.text = "Level Complete";
+			shareButton.SetActive (true);
 			if (GameController.levelIndex == 2) {
 				nextChapterButton.SetActive (true);
 			} else {

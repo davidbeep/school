@@ -1,0 +1,88 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class SocialShare : MonoBehaviour
+{
+	public string Title ;
+	public string Description;
+	public string Image;
+	public string URL;
+	
+	private string vkTemplate = "http://vk.com/share.php?title={0}&description={1}&image={2}&url={3}";
+	private string facebookTemplate = "https://www.facebook.com/sharer/sharer.php?u={3}";
+	private string odnoklassnikiTemplate = "http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl={3}&st.comments={1}";
+	private string twitterTemplate = "https://twitter.com/intent/tweet?text={0}&url={3}";
+
+	void Start()
+	{
+		// Only these vars are needed for tweet
+		Title = "I just beat a level of the #SirUmbrella game for #Android! DL it on Google Play ;)" ;
+		URL = "www.SirUmbrella.com" ; // doesn't exist yet, but oh well
+
+	}
+	private enum Social
+	{
+		VK,
+		Facebook,
+		Twitter,
+		Odnoklassniki
+	}
+	
+	string EscapeURL(string url)
+	{
+		return WWW.EscapeURL(url).Replace("+", "%20");
+	}
+	
+	string makeUrl(Social social)
+	{
+		string template = string.Empty;
+		switch (social)
+		{
+		case Social.VK:
+			template = vkTemplate;
+			break;
+		case Social.Facebook:
+			template = facebookTemplate;
+			break;
+		case Social.Twitter:
+			template = twitterTemplate;
+			break;
+		case Social.Odnoklassniki:
+			template = odnoklassnikiTemplate;
+			break;
+		default:
+			break;
+		}
+		
+		return string.Format(template, EscapeURL(Title), EscapeURL(Description), EscapeURL(Image), EscapeURL(URL));
+	}
+	
+	public void VK()
+	{
+		string url = makeUrl(Social.VK);
+		Publish(url);
+	}
+	
+	public void Facebook()
+	{
+		string url = makeUrl(Social.Facebook);
+		Publish(url);
+	}
+	
+	public void Twitter()
+	{
+		string url = makeUrl(Social.Twitter);
+		Publish(url);
+	}
+	
+	public void Odnoklassniki()
+	{
+		string url = makeUrl(Social.Odnoklassniki);
+		Publish(url);
+	}
+	
+	void Publish(string url)
+	{
+		Application.OpenURL(url);
+	}
+}

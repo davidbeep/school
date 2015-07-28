@@ -12,6 +12,7 @@ TagManager:
   - nextChapterButton
   - highScoreButton
   - highScores
+  - shareButton
   layers:
   - Default
   - TransparentFX
