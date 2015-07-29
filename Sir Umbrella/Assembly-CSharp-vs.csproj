@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\SocialShare.cs" />
      <Compile Include="Assets\Scripts\UI.cs" />
      <Compile Include="Assets\Scripts\UINavigation.cs" />
+     <Compile Include="Assets\Scripts\UISubsystemTest.cs" />
      <Compile Include="Assets\Scripts\gameOver.cs" />
      <Compile Include="Assets\Scripts\gamePlay\camera.cs" />
      <Compile Include="Assets\Scripts\gamePlay\charControl.cs" />

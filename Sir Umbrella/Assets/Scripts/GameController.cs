@@ -14,7 +14,19 @@ public class GameController : MonoBehaviour
 
 	void Awake ()
 	{
-	
+		if (Application.genuineCheckAvailable) 
+		{
+			Debug.Log(this.ToString() + " Yes! Application.genuineCheckAvailable");
+			if (Application.genuine) 
+			{
+				Debug.Log(this.ToString() + " Yes! Application.genuine");
+			}
+			else 
+			{
+				Debug.Log(this.ToString() + " No! Application Not genuine");
+				Application.Quit() ; // genuineCheck Failed! Application is an altered copy
+			}
+		}
 		// singleton pattern
 		if (controller == null) {
 			DontDestroyOnLoad (gameObject);
